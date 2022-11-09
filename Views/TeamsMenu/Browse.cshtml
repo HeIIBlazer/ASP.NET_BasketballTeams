@@ -1,0 +1,24 @@
+﻿@model BasketBall_JPTV20.Models.Team
+@{ 
+    ViewBag.Title = "TeamsMenu";
+}
+
+<h2>Browsing Team: @Model.Name</h2>
+@if (@Model.Players.Count() > 0)
+{
+    <ul>
+        @foreach (var player in Model.Players)
+         {
+            <li>
+                @player.Name - age(@player.Age) - @player.Position 
+            </li>
+         }
+    </ul>
+}else
+{
+    <p>No Players</p>
+}
+
+<p style="margin-top:20px;">
+    Всего игроков в команде <b>@Model.Name</b>: @Model.Players.Count()
+</p>

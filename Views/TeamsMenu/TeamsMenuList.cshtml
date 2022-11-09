@@ -1,0 +1,12 @@
+﻿@model IEnumerable<BasketBall_JPTV20.Models.Team>
+
+<ul id="categories">
+    <li>@Html.ActionLink("All Teams", "Index")</li>
+    @foreach (var item in Model)
+            {
+                <li>
+                    @Html.ActionLink(item.Name,"Browse","TeamsMenu", new {id = item.Id}, null)
+                </li>
+            }
+</ul>
+
